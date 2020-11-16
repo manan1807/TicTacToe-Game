@@ -14,10 +14,10 @@ function Board() {
 
     const [squarearr, setSquarearr] = useState([]); 
     const [XisNext, setXisNext] = useState("true");
-
+    const emptysquare = squarearr.slice().fill();
     function handleClick(i) {
         const squares = squarearr.slice();
-
+        
 
         //console.log(squares[i]);
     //    controls click on buttons
@@ -86,6 +86,9 @@ function Board() {
                 {renderSquare(7)}
                 {renderSquare(8)}
             </div>
+            <div class="margin">
+            <Button variant="secondary" onClick={()=> setSquarearr(emptysquare)}>Reset</Button>
+            </div>
         </div>
     )
 }
@@ -96,6 +99,7 @@ export default function game() {
     return (
         <div >
         <Board />
+       
         </div>
     )
 }
