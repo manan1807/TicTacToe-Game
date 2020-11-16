@@ -67,16 +67,16 @@ function Board() {
     }
     return (
 
-        <div>
+        <div class="allign">
             <div>
     <Alert variant="dark" >{status}</Alert>
                 </div>
-            <div>
+            <div >
                 {renderSquare(0)}
                 {renderSquare(1)}
                 {renderSquare(2)}
             </div>
-            <div>
+            <div >
                 {renderSquare(3)}
                 {renderSquare(4)}
                 {renderSquare(5)}
