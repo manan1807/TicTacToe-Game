@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import { Button,Alert} from 'react-bootstrap'
+import './TicTacToe.css'
+
 function Square(props) {
     return (
-
-        <Button variant= "secondary"
+      
+        <Button variant="flat"
         onClick={() => { props.onClick() }}>{props.value}</Button>
-     
+    
     )
 }
 function Board() {
@@ -18,7 +20,8 @@ function Board() {
 
 
         //console.log(squares[i]);
-        if (squares[i]) {
+    //    controls click on buttons
+        if (squares[i] || CalculateWinner(squarearr)) {
             return
         }
         squares[i] = XisNext ? 'X' : 'O';
@@ -57,10 +60,10 @@ function Board() {
     const winner = CalculateWinner(squarearr);
     let status;
     if (winner) {
-        status = "Winner" + winner;
+        status = "Winner : " + winner;
     }
     else {
-        status = "NextPlayer:" + (XisNext ? 'X' : 'O');
+        status = "NextPlayer : " + (XisNext ? 'X' : 'O');
     }
     return (
 
